@@ -1,0 +1,67 @@
+@use '../../partial-styles/variables' as *;
+
+.story-container{
+    padding: 1rem;
+
+    &__storyline {
+        border: 1px solid $accent-color;
+        padding: 1rem;
+        color: black;
+        background-color: $main-color;
+        border-radius: 6px;
+        height: 25vh;
+        overflow-y: scroll;
+        transition: all 1s ease-in-out;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &--hide {
+            height: 0;
+            padding: 0;
+            // overflow: hidden;
+        }
+    }
+
+    &__option {
+        display: inline-block;
+        color: black;
+        border: 1px solid;
+        outline: 1px solid;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 6px;
+        background-color: $secondary-color;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+
+
+        &:hover {
+            color: $secondary-color;
+            background-color: black;
+            border-color: $secondary-color;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+        color: red;
+        text-shadow: 2px 2px white;
+    }
+
+    &__question {
+        margin-top: 1rem;
+        color: blue;
+    }
+
+    &__text-container {
+        margin: 1rem;
+    }
+
+    &__buttons {
+        width: 35%;
+        flex-shrink: 0;
+    }
+
+}

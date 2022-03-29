@@ -1,0 +1,65 @@
+@use '../../partial-styles/animation' as *;
+@use '../../partial-styles/variables' as *;
+@use '../../partial-styles/placeholders' as *;
+
+.homepage{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__heading {
+        margin-top: 5rem;
+        color: red;
+        text-shadow: 2px 2px white;
+    }
+
+    &__jojo {
+        @extend %jojo;
+        margin: 5rem 0;
+        animation: stand-cycle 1s steps(5) infinite;
+    }
+
+    &__start {
+        $button: &;
+
+        border: 1px solid $secondary-color;
+        padding: 1rem;
+        border-radius: 6px;
+        margin-top: 3rem;
+        position: relative;
+        width: 20rem;
+        text-align: center;
+
+        &-seriously {
+            display: none;
+        }
+
+        &:hover {
+            color: $accent-color;
+            border-color: $secondary-color;
+            background-color: $main-color;
+            #{$button} {
+                &-button{
+                    display: none;
+                }
+
+                &-seriously {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__authors {
+        text-align: center;
+        font-size: 0.7rem;
+        margin-top: 5rem;
+        font-size: .75rem;
+    }
+
+    &__firm {
+        color: blue;
+        font-size: 1rem;
+        text-shadow: 2px 2px white;
+    }
+}

@@ -1,0 +1,23 @@
+@use './partial-styles/variables' as *;
+
+body {
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    background-image: url("http://localhost:6969/images/black-background.png");
+    color: $main-color;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: $main-color;
+    text-decoration: none;
+}
