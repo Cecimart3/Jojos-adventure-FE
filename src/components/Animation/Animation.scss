@@ -3,84 +3,78 @@
 @use '../../partial-styles/placeholders' as *;
 
 .animation {
-    width: 100%;
-    height: 50vh;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://jojos-adventure.herokuapp.com/images/city.png");
+  background-position-y: bottom;
+  background-size: cover;
+  margin: 2rem 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--run {
+    animation: city 2s linear forwards 1s;
+  }
+
+  &__message-container {
     position: relative;
-    overflow: hidden;
-    background-image: url("http://localhost:6969/images/city.png");
-    background-position-y: bottom;
-    background-size: cover;
-    margin: 2rem 0;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  &__overmessage {
+    color: $accent-color;
+    text-shadow: 3px 3px 2px $secondary-color;
+    font-size: 5rem;
+    animation: glitch 2.5s infinite;
 
-    
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      animation: glitch2 2.5s infinite;
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      top: 0;
+      animation: glitch3 2.5s infinite;
+    }
+  }
+
+  &__jojo {
+    @extend %jojo;
+    position: absolute;
+
     &--run {
-        animation: city 2s linear forwards 1s;
+      animation: walk-cycle 1s steps(6) 1s 2 forwards,
+        jump-cycle 1s steps(5) 2.45s forwards, jump 1s forwards 2.45s;
     }
 
-    &__message-container {
-        position: relative;
+    &--punch {
+      animation: walk-cycle 1s steps(6) 1s 2 forwards,
+        punch-cycle 0.3s steps(5) 3.1s forwards;
     }
-    &__overmessage {
-        color: $accent-color;
-        text-shadow: 3px 3px 2px $secondary-color;
-        font-size: 5rem;
-        animation: glitch 2.5s infinite;
+  }
 
+  &__obstruction {
+    width: 8rem;
+    height: 7rem;
+    position: absolute;
+    bottom: 0;
+    left: -8rem;
 
-        &:nth-child(2) {
-            position: absolute;
-            top: 0;
-            animation: glitch2 2.5s infinite;
-        }
-
-        &:nth-child(3) {
-            position: absolute;
-            top: 0;
-            animation: glitch3 2.5s infinite;
-        }
+    &--run {
+      animation: object-run 2.5s forwards 2s;
     }
 
-    &__jojo {
-        @extend %jojo;
-        position: absolute;
-
-        
-        &--run {
-            animation: walk-cycle 1s steps(6) 1s 2 forwards, 
-                        jump-cycle 1s steps(5) 2.45s forwards, 
-                        jump 1s forwards 2.45s;
-        }
-
-        &--punch {
-            animation: walk-cycle 1s steps(6) 1s 2 forwards,
-                        punch-cycle 0.3s steps(5) 3.1s forwards;
-        }
-
+    &--punch {
+      animation: object-punch 2.5s linear alternate 2s;
     }
 
-    &__obstruction {
-        width: 8rem;
-        height: 7rem;
-        position: absolute;
-        bottom: 0;
-        left: -8rem;
-
-        &--run {
-            animation: object-run 2.5s forwards 2s;
-        }
-
-        &--punch {
-            animation: object-punch 2.5s linear alternate 2s;
-        }
-        
-
-        &-img {
-            width: 100%;
-            height: 100%;
-        }
+    &-img {
+      width: 100%;
+      height: 100%;
     }
+  }
 }
