@@ -11,4 +11,4 @@ const storyCalls = {
   nextStory: (id) => storyApi.get(`/story/${id}`),
 };
 
-export default storyCalls;
+export { storyCalls, BASE_URL };

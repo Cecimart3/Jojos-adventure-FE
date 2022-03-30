@@ -1,7 +1,7 @@
 import "./StoryPage.scss";
 import { Link } from "react-router-dom";
 import { Component } from "react";
-import storyCalls from "../../utils/apiCall";
+import { storyCalls, BASE_URL } from "../../utils/apiCall";
 import Animation from "../../components/Animation/Animation";
 
 class StoryPage extends Component {
@@ -13,17 +13,13 @@ class StoryPage extends Component {
     animationImage: null,
   };
 
-  background = new Audio(
-    "https://jojos-adventure.herokuapp.com/audio/Electronic_Fantasy.mp3"
-  );
+  background = new Audio(`${BASE_URL}audio/Electronic_Fantasy.mp3`);
   buttonSound = new Audio(
-    "https://jojos-adventure.herokuapp.com/audio/mixkit-arcade-game-jump-coin-216.wav"
+    `${BASE_URL}audio/mixkit-arcade-game-jump-coin-216.wav`
   );
-  gameWin = new Audio(
-    "https://jojos-adventure.herokuapp.com/audio/mixkit-video-game-win-2016.wav"
-  );
+  gameWin = new Audio(`${BASE_URL}audio/mixkit-video-game-win-2016.wav`);
   gameOver = new Audio(
-    "https://jojos-adventure.herokuapp.com/audio/mixkit-retro-arcade-game-over-470.wav"
+    `${BASE_URL}audio/mixkit-retro-arcade-game-over-470.wav`
   );
 
   componentDidMount() {
