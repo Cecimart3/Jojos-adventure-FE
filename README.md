@@ -2,8 +2,6 @@
 
 A text-based story game with accompanying animations conceptualized and built over the course of 3 days with @jekiquin for a pair-programming project during our coding bootcamp.
 
-Vist App:
-https://jojos-adventure.herokuapp.com/
 
 ### Project requirements:
 - use pair-programming principles
